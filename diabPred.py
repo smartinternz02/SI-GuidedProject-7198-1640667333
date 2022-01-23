@@ -1,9 +1,12 @@
+#Choosing RandomForest classifier to build the model
+#Accuracy : 81%
 import pandas as pd
 import numpy as np
 from sklearn.ensemble import RandomForestClassifier
 import pickle
 
 data = pd.read_csv("diabetes.csv")
+#We use the entire dataset to train the model and not splitting them ito train and test data because data to be tested will be provided by the user as input
 x = np.array(data[['Pregnancies', 'Glucose', 'BloodPressure', 'SkinThickness', 'Insulin',
        'BMI', 'DiabetesPedigreeFunction', 'Age']])
 y = np.array(data[['Outcome']])
